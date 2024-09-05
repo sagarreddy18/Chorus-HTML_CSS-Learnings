@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Templating Example</title>
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .product img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <template id="product-template">
+        <div class="product">
+            <img src="" alt="Product Image" class="product-image">
+            <h3 class="product-name"></h3>
+            <p class="product-description"></p>
+            <span class="product-price"></span>
+        </div>
+    </template>
+
+    <div id="product-list"></div>
+     <button onclick="displayData()">View Produts</button>
+    <script>
+        const products = [
+            {
+                name: "Product 1",
+                description: "This is the description for product 1.",
+                price: "$10.00",
+                image: "https://via.placeholder.com/100"
+            },
+            {
+                name: "Product 2",
+                description: "This is the description for product 2.",
+                price: "$20.00",
+                image: "https://via.placeholder.com/100"
+            },
+            {
+                name: "Product 3",
+                description: "This is the description for product 3.",
+                price: "$30.00",
+                image: "https://via.placeholder.com/100"
+            }
+        ];
+      function getProductsData(){
+        const template = document.getElementById('product-template');
+        const productList = document.getElementById('product-list');
+
+        products.forEach(product => {
+            const clone = template.content.cloneNode(true);
+            clone.querySelector('.product-name').textContent = product.name;
+            clone.querySelector('.product-description').textContent = product.description;
+            clone.querySelector('.product-price').textContent = product.price;
+            clone.querySelector('.product-image').src = product.image;
+
+
+            productList.appendChild(clone);
+        
+        });
+    }
+    function displayData(){
+        getProductsData();
+    }
+    </script>
+</body>
+</html>

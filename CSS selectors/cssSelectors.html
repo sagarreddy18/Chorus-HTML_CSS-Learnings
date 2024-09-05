@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p.intro::first-letter {
+            color: #ff0000;
+            font-size: 200%;
+        }
+
+        a.link:hover {
+            font-size: 30px;
+            color: darkcyan;
+        }
+
+        p.display {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        div:hover p.display {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p class="intro">This is an introduction.</p>
+    <p>This is a paragraph with some text. A bit more text even.</p>
+    <a href="www.google.com" class="link">Hello Guys!</a>
+    </br>
+    <div>Hover over this div element to show the p element
+        <p class="display">Tada! Here I am!</p>
+    </div>
+</body>
+
+</html>

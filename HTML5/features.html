@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 features</title>
+    <style type="text/css">
+        mark {
+            background-color: green;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>------------ HTML5 Features -----------</h1>
+    <!--Details Tag-->
+    <h3>Details Tag:</h3>
+    <details>
+        <summary>Click Here to get the user details</summary>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Job</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sagar Reddy</td>
+                <td>Hyderabad</td>
+                <td>UI/UX</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jathin Reddy</td>
+                <td>Karimnagar</td>
+                <td>UI/UX</td>
+            </tr>
+        </table>
+    </details>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <!--(Content Editable)-->
+    <h3>Content Editable:</h3>
+    <ul class="content-editable" contenteditable="true">
+        <li> 1. Milk </li>
+        <li> 2. Bread </li>
+        <li> 3. Honey </li>
+    </ul>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <!--Mark Content-->
+    <h3>Mark Content:</h3>
+    <p id="mark-content"> Did you know, you can <mark>"Highlight something interesting"</mark> just with a HTML tag?
+    </p>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <!--Know Data Attribute-->
+    <h3>Data Attribute:</h3>
+    <div class="data-attribute" id="data-attr" data-custom-attr="You are just Awesome!">
+        I have a hidden secret!
+    </div>
+    <button onclick="reveal()">Reveal</button>
+
+    <p id="msg"></p> <!-- This element will display the revealed message -->
+
+    <script>
+        function reveal() {
+            let dataDiv = document.getElementById('data-attr');
+            console.log(dataDiv);
+            let value = dataDiv.dataset['customAttr'];
+            console.log(value);
+            document.getElementById('msg').innerHTML = `<mark>${value}</mark>`;
+        }
+    </script>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <!--Output Tag-->
+    <h3>Output Tag:</h3>
+    <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
+        <input type="number" id="a" value="0">
+        * <input type="number" id="b" value="0">
+        = <output name="x" for="a b"></output>
+    </form>
+    <hr style="width:100%;text-align:left;margin-left:0">
+   <!-- Datalist and it provides autocomplete --> 
+    <h3>Datalist:</h3>
+    <form action="" method="get">
+        <label for="fruit">Choose your fruit from the list:</label>
+        <input list="fruits" name="fruit" id="fruit">
+            <datalist id="fruits">
+               <option value="Apple">
+               <option value="Orange">
+               <option value="Banana">
+               <option value="Mango">
+               <option value="Avacado">
+               <option value="Angur">
+            </datalist>
+         <input type="submit">
+     </form>
+</body>
+
+</html>

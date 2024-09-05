@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5</title>
+</head>
+
+<body>
+    <video width="320" height="240" controls>
+        <source src="C:\Users\Sagar Thoutu\Downloads\large.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <audio controls>
+        <source src="audiofile.mp3" type="audio/mpeg">
+        <source src="audiofile.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        Your browser does not support the canvas element.
+    </canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(0, 0, 150, 75);
+    </script>
+
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+    <p id="result"></p>
+    <script>
+        // Save data to localStorage
+        localStorage.setItem("username", "JohnDoe");
+
+        // Retrieve data
+        document.getElementById("result").innerHTML = localStorage.getItem("username");
+    </script>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location"></p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            document.getElementById("location").innerHTML =
+                "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+    <label for="disk">Disk Usage:</label>
+    <meter id="disk" value="0.7">70%</meter>
+    <details>
+        <summary>More Info</summary>
+        <p>This is additional information that is initially hidden.</p>
+    </details>
+    <p>Do not forget to <mark>highlight</mark> important concepts.</p>
+
+</body>
+
+</html>
